@@ -15,11 +15,15 @@ let people = [{
 
 const resolvers = {
     Query: {
-        getInfo: () => people,
+        getUsers: () => people,
+        getUserByName: (p, args) => {
+            const { name } = args;
+            return people.find(person => person.name == name)
+        }
     },
 
     Mutation: {
-        post: (p, args) => {
+        post: (args) => {
             const person = {
                 name: args.name,
                 age: args.age,
