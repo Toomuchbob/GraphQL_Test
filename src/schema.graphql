@@ -1,0 +1,13 @@
+type Query {
+    getInfo: [Person!]!
+}
+
+type Mutation {
+    post(name: String!, age: Int!, nameOfFriends: [String]!): Person!
+}
+
+type Person {
+    name: String!
+    age: Int!
+    nameOfFriends: [String]!
+}
